@@ -1,0 +1,19 @@
+name: DMPInventoryPlayerInfo
+main: email.com.gmail.cosmoconsole.bukkit.deathmsg.inventory.Main
+version: 1.11
+api-version: 1.13
+description: Adds inventory-related tags into DeathMessagesPrime.
+author: CosmoConsole
+depend: [DeathMessagesPrime]
+permissions:
+   dmpinventoryplayerinfo.*:
+      description: Gives access to all DMPInventoryPlayerInfo features.
+      default: op
+      children:
+         dmpinventoryplayerinfo.viewinv: true
+   dmpinventoryplayerinfo.viewinv:
+      description: Allows viewing the inventories with %inventory%. On by default, remove this permission to disable viewing inventories.
+      default: true
+   dmpinventoryplayerinfo.duplicate:
+      description: Allows taking items out of the inventory. Do not grant this permission to everyone, since it allows duplicating items!
+      default: false

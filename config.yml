@@ -1,0 +1,72 @@
+# Do not change
+config-version: 9
+
+# The text that appears in the Inventory link.
+inventory-text: "Inventory"
+inventorykiller-text: "Inventory"
+
+# A tooltip shown for %inventory% and %inventorykiller%.
+# Set to empty to disable (default).
+inventory-tooltip: ""
+
+# Use the above tooltip instead of the entity tooltip
+# for %victiminv%, etc.
+# Only applies if inventory-tooltip has been set.
+inventory-tooltip-instead-of-entity: false
+
+# The expiry time for inventory links. After the time has passed, 
+# the inventory link stops working.
+# 600 seconds (10 minutes) should be ok for smaller servers. 
+# Decrease the number down on larger servers to reduce memory usage 
+# (and possible lag).
+expiry-time-seconds: 600
+
+# Show message on how much time is remaining or whether it has expired.
+time-messages: false
+# use %n% for the number of seconds
+time-remaining-message: "&aTime remaining to open this inventory: %n% seconds"
+time-expired-message: "&cThis inventory has expired"
+
+# The message shown if the dmpinventoryplayerinfo.viewinv permission 
+# has been removed from a player and that player tries to view an inventory
+no-permission-message: "&cNo permission to view inventories"
+
+# Whether the dmpinventoryplayerinfo.duplicate permission actually works
+# and allows people to take items from the inventory view.
+allow-duplication: false
+
+# What items to show in the top right corner (from right to left)
+# valid values in the list: potion, experience, health, food. 
+# at most 1 of each
+status-items:
+  - health
+  - potion
+  
+# Same as above, but for the inventory of the killing player
+status-items-killer:
+  - health
+  - potion
+
+# Special items for various info
+# type: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+items:
+  potion: # the potion effect item
+    name: "&eActive Effects"
+  experience: # the experience item
+    type: EXP_BOTTLE
+    # %d1 is the number of levels, %d2 is total XP
+    name: "&aXP: &eLevel %d1 (%d2 XP)" 
+  health: # the health item
+    type: REDSTONE_BLOCK
+    # Show hearts in the name, showing the amount of lethal damage (if true, name below has no effect)
+    classic: true
+    # %d1 is remaining HP, %d2 is maximum HP, %d3 is lethal damage, all in half hearts
+    name: "&cHealth: %d1 / %d2 HP (damage: %d3 HP)"
+  food: # the food/hunger bar item
+    type: COOKED_BEEF
+    # Show a bar as the name (if true, name below has no effect)
+    classic: true
+    # %d1 is remaining FP (food point), %d2 is maximum FP
+    name: "&6Hunger: %d1 / %d2 FP"
+
+    
